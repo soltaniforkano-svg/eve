@@ -931,8 +931,37 @@ body[dir="rtl"] .whatsapp-btn { right: auto; left: 30px; }
 }
 
 @media (max-width: 768px) {
-    .nav { display: none; }
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: var(--transition);
+        z-index: 999;
+    }
+    .nav.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    .nav-link {
+        padding: 1rem;
+        display: block;
+    }
     .mobile-toggle { display: block; }
+    .header-container { padding: 0 15px; position: relative; }
+    .header-icons { gap: 10px; }
     .hero-title { font-size: 3rem; }
     .footer-grid { grid-template-columns: 1fr; }
     .cart-panel { width: 100%; right: -100%; left: auto; }
