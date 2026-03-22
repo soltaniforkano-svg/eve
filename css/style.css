@@ -188,11 +188,23 @@ body[dir="rtl"] .section-title::after {
     align-items: center;
 }
 
-.logo span {
+.logo .boutique-text {
     font-family: var(--font-heading);
-    font-size: 0.8rem;
-    letter-spacing: 6px;
-    color: var(--accent-color);
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    font-weight: 300;
+    color: var(--accent-color); /* Changed from accent-light to accent-color to match existing theme */
+    margin-bottom: -5px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .logo .boutique-text {
+        letter-spacing: 2px;
+    }
+    .logo .eve-text {
+        font-size: 1.5rem;
+    }
 }
 
 .logo h1 {
