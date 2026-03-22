@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Eve | La mode pour toute la famille</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Bar for Promo -->
+    <div class="top-bar">
+        <p data-fr="Livraison gratuite à partir de 300 DT" data-ar="توصيل مجاني للطلبات أكثر من 300 دينار">Livraison gratuite à partir de 300 DT d'achat</p>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle icon-btn" id="mobileToggle"><i class="fas fa-bars"></i></button>
+            
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#" data-link="home">
+                    <span>B O U T I Q U E</span>
+                    <h1>EVE</h1>
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#" data-link="home" class="nav-link active" data-fr="Accueil" data-ar="الرئيسية">Accueil</a></li>
+                    <li><a href="#" data-link="homme" class="nav-link" data-fr="Homme" data-ar="أزياء رجالية">Homme</a></li>
+                    <li><a href="#" data-link="femme" class="nav-link" data-fr="Femme" data-ar="أزياء نسائية">Femme</a></li>
+                    <li><a href="#" data-link="enfants" class="nav-link" data-fr="Enfants" data-ar="ملابس أطفال">Enfants</a></li>
+                </ul>
+            </nav>
+
+            <!-- Icons -->
+            <div class="header-icons">
+                <button class="icon-btn search-btn"><i class="fas fa-search"></i></button>
+                <div class="lang-switcher">
+                    <button id="langToggle" class="lang-btn">AR</button>
+                </div>
+                <button class="icon-btn" id="accountBtn"><i class="far fa-user"></i></button>
+                <button class="icon-btn" id="wishlistBtn"><i class="far fa-heart"></i></button>
+                <button class="icon-btn cart-btn" id="cartOpenBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area: SPA Views -->
+    <main id="app">
+        <!-- Home View -->
+        <section class="view active" id="view-home">
+            <div class="hero">
+                <!-- Parallax background will be set in CSS or JS -->
+                <div class="hero-bg" id="heroBg"></div>
+                <div class="hero-content">
+                    <h2 class="hero-title reveal-text">Boutique Eve</h2>
+                    <p class="hero-slogan reveal-text delay-1" data-fr="La mode pour toute la famille" data-ar="الموضة لجميع أفراد الأسرة">La mode pour toute la famille</p>
+                    <button class="btn btn-primary cta-btn reveal-text delay-2" data-link="femme" data-fr="Découvrir la Collection" data-ar="اكتشف المجموعة">Découvrir la Collection</button>
+                </div>
+            </div>
+
+            <!-- Categories Section -->
+            <section class="home-categories section-padding">
+                <h3 class="section-title text-center" data-fr="Nos Collections" data-ar="مجموعاتنا">Nos Collections</h3>
+                <div class="category-grid container">
+                    <!-- Cards -->
+                    <div class="category-card" data-link="homme">
+                        <div class="cat-img-wrapper">
+                            <img src="" alt="Homme" class="cat-img" id="catImgHomme">
+                        </div>
+                        <div class="cat-overlay">
+                            <span class="cat-label">Homme</span>
+                        </div>
+                    </div>
+                    <div class="category-card" data-link="femme">
+                        <div class="cat-img-wrapper">
+                            <img src="" alt="Femme" class="cat-img" id="catImgFemme">
+                        </div>
+                        <div class="cat-overlay">
+                            <span class="cat-label">Femme</span>
+                        </div>
+                    </div>
+                    <div class="category-card" data-link="enfants">
+                        <div class="cat-img-wrapper">
+                            <img src="" alt="Enfants" class="cat-img" id="catImgEnfants">
+                        </div>
+                        <div class="cat-overlay">
+                            <span class="cat-label">Enfants</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Product Carousel (New Arrivals) -->
+            <section class="new-arrivals section-padding">
+                <div class="container">
+                    <h3 class="section-title" data-fr="Nouveautés" data-ar="وصل حديثاً">Nouveautés</h3>
+                    <div class="product-grid" id="newArrivalsGrid">
+                        <!-- Products inserted via JS -->
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-outline" data-link="femme" data-fr="Voir tout" data-ar="عرض الكل">Voir tout</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Category View -->
+        <section class="view" id="view-category">
+            <div class="category-header">
+                <div class="category-header-bg" id="categoryHeaderBg"></div>
+                <h2 class="category-title" id="categoryTitle">Catégorie</h2>
+            </div>
+            <div class="container layout-sidebar section-padding">
+                <aside class="filters">
+                    <div class="filter-group">
+                        <h4 data-fr="Filtres" data-ar="تصفية">Filtres <i class="fas fa-sliders-h"></i></h4>
+                        <div class="filter-item">
+                            <h5 data-fr="Taille" data-ar="المقاس">Taille</h5>
+                            <div class="size-options">
+                                <label><input type="checkbox"> S</label>
+                                <label><input type="checkbox"> M</label>
+                                <label><input type="checkbox"> L</label>
+                                <label><input type="checkbox"> XL</label>
+                            </div>
+                        </div>
+                        <div class="filter-item">
+                            <h5 data-fr="Prix" data-ar="السعر">Prix</h5>
+                            <input type="range" class="price-range" min="0" max="500" value="500">
+                            <div class="price-labels">
+                                <span>0 DT</span>
+                                <span>+500 DT</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <div class="product-listing">
+                    <div class="product-grid" id="categoryProductGrid">
+                        <!-- Products inserted via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Checkout View -->
+        <section class="view" id="view-checkout">
+            <div class="container section-padding">
+                <h2 class="section-title text-center" data-fr="Finaliser la commande" data-ar="إتمام الطلب">Finaliser la commande</h2>
+                <div class="checkout-layout">
+                    <div class="checkout-form-container">
+                        <form id="checkoutForm" class="form">
+                            <div class="form-group">
+                                <label data-fr="Nom et Prénom" data-ar="الاسم واللقب">Nom et Prénom</label>
+                                <input type="text" id="checkoutName" required placeholder="Ex: Ali Ben Salah">
+                            </div>
+                            <div class="form-group">
+                                <label data-fr="Numéro de téléphone" data-ar="رقم الهاتف">Numéro de téléphone</label>
+                                <input type="tel" id="checkoutPhone" required placeholder="Ex: 98 123 456">
+                            </div>
+                            <div class="form-group">
+                                <label data-fr="Adresse complète" data-ar="العنوان بالتفصيل">Adresse complète</label>
+                                <input type="text" id="checkoutAddress" required placeholder="Ex: 12 Rue de la République">
+                            </div>
+                            <div class="form-group">
+                                <label data-fr="Ville" data-ar="المدينة">Ville</label>
+                                <select id="checkoutCity" required>
+                                    <option value="Tunis">Tunis</option>
+                                    <option value="Sfax">Sfax</option>
+                                    <option value="Sousse">Sousse</option>
+                                    <option value="Autre">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <h4 class="mt-4" data-fr="Mode de paiement" data-ar="طريقة الدفع">Mode de paiement</h4>
+                            <div class="payment-options">
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="cash" checked>
+                                    <span data-fr="Paiement en espèces à la livraison" data-ar="الدفع نقداً عند الاستلام">Paiement en espèces à la livraison</span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="paymentMethod" value="online">
+                                    <span data-fr="Paiement en ligne (Carte Bancaire)" data-ar="الدفع عبر الإنترنت">Paiement en ligne</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 mt-4" id="submitOrderBtn" data-fr="Confirmer la commande" data-ar="تأكيد الطلب">Confirmer la commande</button>
+                        </form>
+                    </div>
+                    <div class="checkout-summary">
+                        <h4 data-fr="Résumé de la commande" data-ar="ملخص الطلب">Résumé de la commande</h4>
+                        <div id="checkoutItemsList" class="checkout-items"></div>
+                        <div class="summary-totals">
+                            <div class="summary-line"><span data-fr="Sous-total" data-ar="المجموع الفرعي">Sous-total</span><span id="checkoutSubtotal">0 DT</span></div>
+                            <div class="summary-line"><span data-fr="Livraison" data-ar="التوصيل">Livraison</span><span id="checkoutDelivery">8 DT</span></div>
+                            <div class="summary-line total"><span data-fr="Total" data-ar="المجموع">Total</span><span id="checkoutTotal">8 DT</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-overlay" id="cartOverlay"></div>
+        <div class="cart-panel">
+            <div class="cart-header">
+                <h3 data-fr="Votre Panier" data-ar="سلة التسوق">Votre Panier</h3>
+                <button class="close-btn" id="cartCloseBtn">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Items list -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-summary">
+                    <span data-fr="Sous-total" data-ar="المجموع الفرعي">Sous-total</span><span id="cartSubtotal">0 DT</span>
+                </div>
+                <div class="cart-summary delivery">
+                    <span data-fr="Livraison" data-ar="التوصيل">Livraison</span><span id="cartDelivery">8 DT</span>
+                </div>
+                <div class="cart-summary total">
+                    <span data-fr="Total" data-ar="المجموع">Total</span><span id="cartTotal">8 DT</span>
+                </div>
+                <button class="btn btn-primary w-100 mt-3" id="cartCheckoutBtn" data-link="checkout" data-fr="Valider mon panier" data-ar="إتمام الشراء">Valider mon panier</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-overlay" id="quickViewOverlay"></div>
+        <div class="modal-content">
+            <button class="close-btn modal-close" id="quickViewCloseBtn">&times;</button>
+            <div class="quick-view-layout" id="quickViewBody">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Action Button -->
+    <a href="https://wa.me/21652949861" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" title="Commander via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo">
+                    <span>B O U T I Q U E</span>
+                    <h2>EVE</h2>
+                </div>
+                <p class="footer-desc" data-fr="L'élégance à portée de main. Découvrez notre sélection premium." data-ar="الأناقة بين يديك. اكتشف تشكيلتنا المتميزة.">L'élégance à portée de main. Découvrez notre sélection premium.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/21652949861" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/search/top?q=boutique%20eve" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@hanen.chouk" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 data-fr="Liens utiles" data-ar="روابط مفيدة">Liens utiles</h4>
+                <ul>
+                    <li><a href="#" data-link="home">Accueil</a></li>
+                    <li><a href="#" data-link="homme">Homme</a></li>
+                    <li><a href="#" data-link="femme">Femme</a></li>
+                    <li><a href="#" data-link="enfants">Enfants</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-fr="Contactez-nous" data-ar="اتصل بنا">Contactez-nous</h4>
+                <ul>
+                    <li><a href="tel:+21620193520" style="display: flex; gap: 8px; align-items: center;"><i class="fas fa-phone"></i> 20 193 520</a></li>
+                    <li><a href="https://wa.me/21652949861" target="_blank" style="display: flex; gap: 8px; align-items: center;"><i class="fab fa-whatsapp"></i> +216 52 949 861</a></li>
+                    <li><a href="mailto:hanen.c@gmail.com" style="display: flex; gap: 8px; align-items: center;"><i class="fas fa-envelope"></i> hanen.c@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-fr="Newsletter" data-ar="النشرة الإخبارية">Newsletter</h4>
+                <p data-fr="Inscrivez-vous pour recevoir nos offres exclusives." data-ar="اشترك لتلقي عروضنا الحصرية.">Inscrivez-vous pour recevoir nos offres exclusives.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email" required>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Boutique Eve. <span data-fr="Tous droits réservés." data-ar="كل الحقوق محفوظة.">Tous droits réservés.</span></p>
+        </div>
+    </footer>
+
+    <!-- Logic Script -->
+    <script src="js/app.js"></script>
+</body>
+</html>
